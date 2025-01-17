@@ -1,7 +1,7 @@
 # Generative AI and Related Concepts: Detailed Notes
 
 ---
-
+   
 ## 1. **Introduction to Generative AI**
 
 Generative AI has been a key focus in recent years (2022–present), revolutionizing technology and applications. Companies like **OpenAI**, **Anthropic**, **Meta**, **Google**, and **Amazon** are competing to build advanced models. The rapid advancements are driven by models like GPT-4, Claude-3, LLaMA-2, and Gemini.
