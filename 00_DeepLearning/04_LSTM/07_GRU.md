@@ -16,9 +16,10 @@
 
 - **Purpose:** Decides how much of the previous hidden state (\(h\_{t-1}\)) to forget or reset.
 - **Formula:**
-  \[
-  r*t = \sigma(W_r \cdot [x_t, h*{t-1}] + b_r)
-  \]
+
+  $$
+  r_t = \sigma(W_r \cdot [x_t, h_{t-1}] + b_r)
+  $$
 
   - \( W_r \): Weight matrix for the reset gate.
   - \( b_r \): Bias term.
@@ -40,9 +41,10 @@
 
 - **Purpose:** Represents the new information computed based on the reset gate and current input.
 - **Formula:**
-  \[
-  \tilde{h*t} = \text{tanh}(W_h \cdot [r_t \odot h*{t-1}, x_t] + b_h)
-  \]
+
+  $$
+  \tilde{h_t} = \text{tanh}(W_h \cdot [r_t \odot h_{t-1}, x_t] + b_h)
+  $$
 
   - \( W_h \): Weight matrix for candidate hidden state.
   - \( b_h \): Bias term.
@@ -59,9 +61,10 @@
 
 - **Purpose:** Balances the contribution of the previous hidden state (\(h\_{t-1}\)) and the candidate hidden state (\(\tilde{h_t}\)).
 - **Formula:**
-  \[
-  z*t = \sigma(W_z \cdot [x_t, h*{t-1}] + b_z)
-  \]
+
+  $$
+  z_t = \sigma(W_z \cdot [x_t, h_{t-1}] + b_z)
+  $$
 
   - \( W_z \): Weight matrix for the update gate.
   - \( b_z \): Bias term.
@@ -76,9 +79,10 @@
 
 - **Purpose:** Combines information from the previous hidden state (\(h\_{t-1}\)) and the candidate hidden state (\(\tilde{h_t}\)) using the update gate (\(z_t\)).
 - **Formula:**
-  \[
-  h*t = z_t \odot \tilde{h_t} + (1 - z_t) \odot h*{t-1}
-  \]
+
+  $$
+  h_t = z_t \odot \tilde{h_t} + (1 - z_t) \odot h_{t-1}
+  $$
 
   - \( z_t \): Update gate controlling the contribution of \(\tilde{h_t}\).
   - \( 1 - z*t \): Contribution from the previous hidden state (\(h*{t-1}\)).
@@ -93,21 +97,21 @@
 ## 3. Step-by-Step Summary of GRU Operations
 
 1. Compute **Reset Gate (\(r_t\))**:
-   \[
-   r*t = \sigma(W_r \cdot [x_t, h*{t-1}] + b_r)
-   \]
+   $$
+   r_t = \sigma(W_r \cdot [x_t, h_{t-1}] + b_r)
+   $$
 2. Compute **Candidate Hidden State (\(\tilde{h_t}\))**:
-   \[
-   \tilde{h*t} = \text{tanh}(W_h \cdot [r_t \odot h*{t-1}, x_t] + b_h)
-   \]
+   $$
+   \tilde{h_t} = \text{tanh}(W_h \cdot [r_t \odot h_{t-1}, x_t] + b_h)
+   $$
 3. Compute **Update Gate (\(z_t\))**:
-   \[
-   z*t = \sigma(W_z \cdot [x_t, h*{t-1}] + b_z)
-   \]
+   $$
+   z_t = \sigma(W_z \cdot [x_t, h_{t-1}] + b_z)
+   $$
 4. Compute **Final Hidden State (\(h_t\))**:
-   \[
-   h*t = z_t \odot \tilde{h_t} + (1 - z_t) \odot h*{t-1}
-   \]
+   $$
+   h_t = z_t \odot \tilde{h_t} + (1 - z_t) \odot h_{t-1}
+   $$
 
 ---
 
