@@ -58,11 +58,18 @@ Normalization is the process of transforming data to have specific statistical p
 
 ### ⚙️ Steps:
 
-1. Compute weighted sums (z₁, z₂, z₃, …)
-2. Normalize using mean (μ) and std dev (σ):  
-   $$ z\_{ ext{norm}} = \frac{z - \mu}{\sigma} $$
-3. Scale and shift using learnable parameters (γ, β):  
-   $$ z*{ ext{scaled}} = \gamma \cdot z*{ ext{norm}} + eta $$
+1. Compute weighted sums \( z_1, z_2, z_3, \ldots \)
+
+2. Normalize using mean \( \mu \) and standard deviation \( \sigma \):
+
+   $$
+   z_{\text{norm}} = \frac{z - \mu}{\sigma}
+   $$
+
+3. Scale and shift using learnable parameters \( \gamma \), \( \beta \):
+   $$
+   z_{\text{scaled}} = \gamma \cdot z_{\text{norm}} + \beta
+   $$
 
 ### ❌ Why BN Fails in Transformers:
 
@@ -81,12 +88,23 @@ Normalization is the process of transforming data to have specific statistical p
 
 ### ⚙️ Steps:
 
-1. For each vector:  
-   $$ \mu = \frac{1}{d} \sum*{i=1}^{d} x_i,\quad \sigma = \sqrt{\frac{1}{d} \sum*{i=1}^{d}(x_i - \mu)^2} $$
-2. Normalize:  
-   $$ x' = \frac{x - \mu}{\sigma} $$
-3. Apply learnable scale and shift:  
-   $$ ext{LN}(x) = \gamma \cdot x' + eta $$
+1. For each vector:
+
+   $$
+   \mu = \frac{1}{d} \sum_{i=1}^{d} x_i,\quad
+   \sigma = \sqrt{\frac{1}{d} \sum_{i=1}^{d}(x_i - \mu)^2}
+   $$
+
+2. Normalize:
+
+   $$
+   x' = \frac{x - \mu}{\sigma}
+   $$
+
+3. Apply learnable scale and shift:
+   $$
+   \text{LN}(x) = \gamma \cdot x' + \beta
+   $$
 
 ### ✅ Why LN is Better for Transformers:
 
