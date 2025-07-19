@@ -19,3 +19,6 @@ uvicorn
 sse_starlette
 langchain-chroma
 bs4
+youtube-transcript-api
+tiktoken
+sentence-transformers
