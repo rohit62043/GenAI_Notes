@@ -10,7 +10,7 @@ python-dotenv
 langchain-openai
 langchain_huggingface
 faiss-cpu
-streamlit
+streamlit==1.24.0 
 langchain_ollama
 langchain_groq
 fastapi
@@ -24,3 +24,5 @@ tiktoken
 sentence-transformers
 wikipedia
 arxiv
+altair==4.2.2
+duckduckgo-search
