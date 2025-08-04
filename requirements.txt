@@ -26,3 +26,4 @@ wikipedia
 arxiv
 altair==4.2.2
 duckduckgo-search
+langchain_nvidia_ai_endpoints
