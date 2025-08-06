@@ -40,9 +40,10 @@ if not db_uri:
     st.info("Please enter the database information and uri")
 if not api_key:
     st.info("Please add the groq api key")
+    st.stop()
 
 # Initialize the LLM model (Groq LLaMA3)
-llm = ChatGroq(groq_api_key=api_key, model_name="Llama3-8b-8192", streaming=True)
+llm = ChatGroq(groq_api_key=api_key, model_name="gemma2-9b-it", streaming=True)
 
 # Function to configure database connection
 @st.cache_resource(ttl="2h")

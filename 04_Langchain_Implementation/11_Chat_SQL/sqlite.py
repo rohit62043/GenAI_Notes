@@ -28,9 +28,9 @@ cursor.execute(sql_query)
 
 #  Step 4: Insert Records
 students_data = [
-    ("Krish", "Data Science", "A", 90),
-    ("John", "Data Science", "B", 85),
-    ("Mukesh", "Data Science", "A", 78),
+    ("Rohit", "Data Science", "A", 90),
+    ("Kunal", "Data Science", "B", 85),
+    ("Ram", "Data Science", "A", 78),
     ("Jacobs", "DevOps", "A", 50)
 ]
 
